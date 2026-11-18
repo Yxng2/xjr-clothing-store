@@ -1,1 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#111111">
+  <meta name="description" content="Shop custom and everyday T-shirts from XJR PRINTING.">
+  <title>XJR PRINTING — Clothing Store</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-mark">XJR</span><span>PRINTING<small>WEAR YOUR BRAND</small></span></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu">☰</button>
+    <nav id="nav"><a href="#shop">Shop</a><a href="#custom">Custom design</a><a href="#how">How to order</a><button class="cart-button" id="cartOpen">Cart <b id="cartCount">0</b></button></nav>
+  </header>
 
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">XJR PRINTING CLOTHING</p>
+        <h1>MAKE YOUR<br><em>STYLE</em> SPEAK.</h1>
+        <p class="hero-text">Everyday T-shirts. Custom artwork. Your style, printed with care.</p>
+        <a class="primary-btn" href="#shop">Explore collection <span>↗</span></a>
+      </div>
+      <div class="hero-art" aria-label="XJR clothing collection graphic">
+        <div class="hero-ring"></div><div class="shirt-shape"><span>XJR</span></div>
+        <div class="hero-stamp">DESIGN<br>PRINT<br>REPEAT</div>
+        <span class="hero-number">01 / XJR</span>
+      </div>
+      <div class="hero-bottom"><span>KANO, NIGERIA</span><span>LOCAL + INTERNATIONAL ORDERS</span><span>EST. XJR PRINTING</span></div>
+    </section>
+
+    <section class="section shop-section" id="shop">
+      <div class="section-heading"><div><p class="eyebrow">THE COLLECTION</p><h2>Find your <em>fit.</em></h2></div><p>Choose your T-shirt and add it to your cart. Prices are shown in Nigerian naira.</p></div>
+      <div id="products" class="product-grid"><p>Loading collection…</p></div>
+    </section>
+
+    <section class="custom-section" id="custom">
+      <div><p class="eyebrow">MAKE IT YOURS</p><h2>Your idea.<br><em>Your design.</em></h2><p>Upload your own artwork or describe the design you want. Our team will review it and confirm what can be printed before production.</p></div>
+      <div class="custom-panel">
+        <label for="designText">Describe your design</label>
+        <textarea id="designText" rows="4" placeholder="Example: A clean black-and-white chest print with my brand name..."></textarea>
+        <label class="upload-label" for="artworkFile">Upload your artwork or shirt reference (JPG, PNG, WEBP; max 8MB)</label>
+        <input id="artworkFile" type="file" accept="image/jpeg,image/png,image/webp">
+        <p id="uploadStatus" class="muted">No image uploaded yet.</p>
+        <button class="outline-btn" id="saveDesign">Use this for my order</button>
+        <p class="fine-print">Design descriptions are sent with your order for manual review. This starter version does not generate AI images automatically.</p>
+      </div>
+    </section>
+
+    <section class="section steps-section" id="how">
+      <p class="eyebrow">SIMPLE PROCESS</p><h2>How to <em>order.</em></h2>
+      <div class="steps"><article><b>01</b><h3>Choose</h3><p>Select your T-shirt and quantity.</p></article><article><b>02</b><h3>Send order</h3><p>Enter your contact details and submit.</p></article><article><b>03</b><h3>We confirm</h3><p>Our team contacts you to confirm price, delivery and payment arrangements.</p></article></div>
+    </section>
+  </main>
+
+  <footer><a class="brand" href="#"><span class="brand-mark">XJR</span><span>PRINTING<small>WEAR YOUR BRAND</small></span></a><p>© <span id="year"></span> XJR PRINTING. All rights reserved.</p><a id="whatsappLink" href="https://wa.me/2347015119367" target="_blank" rel="noopener">Chat with us on WhatsApp ↗</a></footer>
+
+  <div class="drawer-backdrop" id="backdrop"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping cart">
+    <div class="drawer-head"><h2>Your cart</h2><button id="cartClose" aria-label="Close cart">✕</button></div>
+    <div id="cartItems" class="cart-items"><p class="muted">Your cart is empty.</p></div>
+    <div class="cart-total"><span>Estimated total</span><strong id="cartTotal">₦0</strong></div>
+    <form id="checkoutForm" class="checkout-form">
+      <h3>Order details</h3>
+      <input name="customer" placeholder="Your full name" required maxlength="100">
+      <input name="phone" placeholder="Phone / WhatsApp number" required maxlength="40">
+      <textarea name="address" placeholder="Delivery address (optional)" rows="2"></textarea>
+      <textarea name="note" id="orderNote" placeholder="Extra instructions (optional)" rows="2"></textarea>
+      <button class="primary-btn full" type="submit">Submit order</button>
+      <p class="fine-print">No online payment is taken here. We will contact you to confirm your order.</p>
+      <p id="checkoutStatus" role="status"></p>
+    </form>
+  </aside>
+
+  <section class="admin-area" id="admin">
+    <details><summary>Store admin</summary>
+      <form id="adminLogin"><input type="password" id="adminPassword" placeholder="Admin password"><button class="outline-btn">Sign in</button></form>
+      <div id="adminPanel" hidden><button id="loadOrders" class="outline-btn">Refresh orders</button><button id="adminLogout" class="text-btn">Sign out</button><div id="ordersList"></div></div>
+      <p class="fine-print">Admin access is protected by the password set in your Render environment variables.</p>
+    </details>
+  </section>
+  <script src="/app.js"></script>
+</body>
+</html>
