@@ -1,0 +1,20 @@
+[
+  {
+    "id": "classic-tee",
+    "name": "Classic Round-Neck T-Shirt",
+    "price": 8000,
+    "description": "Comfortable everyday round-neck T-shirt"
+  },
+  {
+    "id": "premium-tee",
+    "name": "Premium Round-Neck T-Shirt",
+    "price": 11000,
+    "description": "Premium quality round-neck T-shirt"
+  },
+  {
+    "id": "custom-tee",
+    "name": "Custom Printed T-Shirt",
+    "price": 14000,
+    "description": "Custom branded and printed T-shirt"
+  }
+]
